@@ -13,6 +13,7 @@ import { MedicalHistory } from "./Routes/MedicalHistory";
 import { PatientHomePage } from "./Routes/PatientHomePage";
 import { PersonalDates } from "./Tabs/pages/PersonalDates";
 import { PersonalHistory } from "./Tabs/pages/PersonalHistory";
+import { PaypalSales } from "./Tabs/pages/Paypal";
 import { PersonalPrescriptions } from "./Tabs/pages/PersonalPrescriptions";
 import { Personalformation } from "./Tabs/pages/Personalformation";
 import { Login } from "./Logs/Login";
@@ -57,6 +58,7 @@ export function Conteiner() {
         <Link
           className="nav-link active my-custom-margin mb-2 mt-2 text-light"
           to="/login"
+          id="linkNavMenu"
         >
           <FontAwesomeIcon
             className="ms-6 me-2"
@@ -74,6 +76,7 @@ export function Conteiner() {
           }}
           className="nav-link active my-custom-margin mb-2 mt-2 text-light"
           to="/"
+          id="linkNavMenu"
         >
           <FontAwesomeIcon
             className="ms-6 me-2"
@@ -206,6 +209,15 @@ export function Conteiner() {
             element={
               <ProtectedRoutesPatient user={user} userRoll={userRoll}>
                 <PersonalHistory />
+              </ProtectedRoutesPatient>
+            }
+          />
+
+          <Route
+            path="pay"
+            element={
+              <ProtectedRoutesPatient user={user} userRoll={userRoll}>
+                <PaypalSales />
               </ProtectedRoutesPatient>
             }
           />
